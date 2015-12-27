@@ -1,0 +1,278 @@
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+indicator <- "HCIP"
+indicator <- "HICP"
+tmp_data <- ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+tmp_GDP <- getEurostatRaw(kod = "teina010", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_unemployment <- getEurostatRaw(kod = "teina310", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_3_month_interest_rate <- getEurostatRaw(kod = "teimf040", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_Production_in_industry <- getEurostatRaw(kod = "teiis080", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_data <- ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+country_abbreviations <- function(data){
+wektor <- c()
+for (i in 1:nrow(data)){
+wektor[i] <- substring(data[i,1],nchar(data[i,1])-1, nchar(data[i,1]))
+}
+return(wektor)
+}
+tmp_data$abbreviation <- country_abbreviations(tmp_data)
+tmp_data
+tmp_HICP
+tmp_data <- ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+tmp_data <- ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+tmp_data
+tmp_GDP
+tmp_data
+tmp_HICP
+tmp_data
+tmp_data <- unlist(ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!"))))))
+tmp_data
+indicator
+tmp_HICP
+ifelse(indicator == "GDP", tmp_data <- tmp_GDP, ifelse(indicator == "HICP", tmp_data <- tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+class(tmp_GDP)
+tmp_HICP
+class(tmp_HICP)
+class(tmp_data)
+tmp_data
+tmp_data = 'dupa'
+tmp_data <- ifelse(indicator == "GDP", tmp_GDP, ifelse(indicator == "HICP", tmp_HICP, ifelse(indicator == "unemployment", tmp_unemployment, ifelse(indicator == "3_month_interest_rate", tmp_3_month_interest_rate, ifelse(indicator == "Production_in_industry", tmp_Production_in_industry, "Mistake!!!")))))
+tmp_data
+tmp_unemployment
+tmp_3_month_interest_rate
+tmp_Production_in_industry
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data
+shiny::runApp()
+shiny::runApp()
+indicator
+table<-data.frame(country =
+c('Belgium',
+'Bulgaria',
+'Czech Republic',
+'Denmark',
+'Germany',
+'Estonia',
+'Ireland',
+'Greece',
+'Spain',
+'France',
+'Croatia',
+'Italy',
+'Cyprus',
+'Latvia',
+'Lithuania',
+'Luxembourg',
+'Hungary',
+'Malta',
+'Netherlands',
+'Austria',
+'Poland',
+'Portugal',
+'Romania',
+'Slovenia',
+'Slovakia',
+'Finland',
+'Sweden',
+'United Kingdom'),
+abbreviation = c('BE',
+'BG',
+'CZ',
+'DK',
+'DE',
+'EE',
+'IE',
+'EL',
+'ES',
+'FR',
+'HR',
+'IT',
+'CY',
+'LV',
+'LT',
+'LU',
+'HU',
+'MT',
+'NL',
+'AT',
+'PL',
+'PT',
+'RO',
+'SI',
+'SK',
+'FI',
+'SE',
+'UK')
+)
+tmp_GDP <- getEurostatRaw(kod = "teina010", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_unemployment <- getEurostatRaw(kod = "teina310", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_3_month_interest_rate <- getEurostatRaw(kod = "teimf040", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_Production_in_industry <- getEurostatRaw(kod = "teiis080", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data
+?na.omit
+shiny::runApp()
+shiny::runApp()
+matrix(c(1,2,NA, 3,4,5,NA,6,NA))
+matrix(c(1,2,NA, 3,4,5,NA,6,NA),ncol=2)
+matrix(c(1,2,NA, 3,4,5,NA,6,NA),ncol=3)
+na.omit(matrix(c(1,2,NA, 3,4,5,NA,6,NA),ncol=3))
+shiny::runApp()
+indicator
+countries <- c("Poland", "Germany", "France")
+countries
+tmp_data
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data
+shiny::runApp()
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data <- na.omit(tmp_data)
+colnames(tmp_data) <- paste0("my_",colnames(tmp_data))
+tmp_data
+time <- c()
+for (i in 1 : ncol(tmp_data)){
+time[i] <- substr(colnames(tmp_data)[i] , 4, nchar(colnames(tmp_data)[i] ))
+}
+time
+time <- time[-1] ### !!!!!!  tu sprawdź czy dobry kolumny obcinasz!!! ###
+shiny::runApp()
+time
+time
+input$Time <- time[2]
+z <- time[2]
+value = eval(parse(text=paste0("tmp_data$my_",z)))
+value
+state_codes
+state_codes = as.character(tmp_data$my_country[!is.na(tmp_data$my_country)])
+countries
+indicator
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data <- na.omit(tmp_data)
+country_abbreviations <- function(data){
+for (i in 1:nrow(data)){
+wektor <- c()
+wektor[i] <- substring(data[i,1],nchar(data[i,1])-1, nchar(data[i,1]))
+}
+return(wektor)
+}
+tmp_data$abbreviation <- country_abbreviations(tmp_data)
+tmp_data <- merge(x = table, y = tmp_data, by = "abbreviation", all.y = TRUE)
+colnames(tmp_data) <- paste0("my_",colnames(tmp_data))
+state_codes = as.character(tmp_data$my_country[!is.na(tmp_data$my_country)])
+state_codes
+tmp_data
+country_abbreviations(tmp_data)
+tmp_data <- merge(x = table, y = tmp_data, by = "abbrevi
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data
+tmp_data <- na.omit(tmp_data)
+country_abbreviations <- function(data){
+wektor <- c()
+for (i in 1:nrow(data)){
+wektor[i] <- substring(data[i,1],nchar(data[i,1])-1, nchar(data[i,1]))
+}
+return(wektor)
+}
+country_abbreviations(tmp_data)
+tmp_data$abbreviation <- country_abbreviations(tmp_data)
+tmp_data
+tmp_data <- merge(x = table, y = tmp_data, by = "abbreviation", all.y = TRUE)
+tmp_data
+tmp_data <- na.omit(tmp_data)
+tmp_data
+colnames(tmp_data) <- paste0("my_",colnames(tmp_data))
+state_codes = as.character(tmp_data$my_country[!is.na(tmp_data$my_country)])
+state_codes
+value = eval(parse(text=paste0("tmp_data$my_",z)))
+value
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data <- na.omit(tmp_data)
+country_abbreviations <- function(data){
+wektor <- c()
+for (i in 1:nrow(data)){
+}
+wektor[i] <- substring(data[i,1],nchar(data[i,1])-1, nchar(data[i,1]))
+return(wektor)
+}
+tmp_data$abbreviation <- country_abbreviations(tmp_data)
+tmp_data <- merge(x = table, y = tmp_data, by = "abbreviation", all.y = TRUE)
+tmp_data <- na.omit(tmp_data)
+tmp_data =  tmp_data[tmp_data$my_country %in% countries,]
+tmp_data
+tmp_data <- eval(parse(text=paste0("tmp_",indicator)))
+tmp_data
+tmp_data <- na.omit(tmp_data)
+country_abbreviations <- function(data){
+wektor <- c()
+for (i in 1:nrow(data)){
+wektor[i] <- substring(data[i,1],nchar(data[i,1])-1, nchar(data[i,1]))
+}
+return(wektor)
+}
+tmp_data$abbreviation <- country_abbreviations(tmp_data)
+tmp_data
+tmp_data <- merge(x = table, y = tmp_data, by = "abbreviation", all.y = TRUE)
+tmp_data <- na.omit(tmp_data)
+tmp_data
+colnames(tmp_data) <- paste0("my_",colnames(tmp_data))
+tmp_data
+tmp_data =  tmp_data[tmp_data$my_country %in% countries,]
+tmp_data
+state_codes = as.character(tmp_data$my_country[!is.na(tmp_data$my_country)])
+state_codes
+value
+tmp_data
+z
+z<-2015M04
+z<-"2015M04"
+eval(parse(text=paste0("tmp_data$my_",z)))
+tmp_GDP
+tmp_HICP
+tmp_HICP <- tmp_HICP[40,0]
+tmp_HICP
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_unemployment <- getEurostatRaw(kod = "teina310", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_unemployment
+tmp_unemployment[,1]
+table(tmp_3_month_interest_rate)
+table(tmp_3_month_interest_rate[,1])
+tmp_3_month_interest_rate[,1]
+tmp_3_month_interest_rate
+tmp_Production_in_industry[,1]
+shiny::runApp()
+shiny::runApp()
+tmp_GDP
+tmp_HICP
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP <- tmp_HICP[40,]
+tmp_HICP <- tmp_HICP[40,]
+tmp_HICP
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP <- tmp_HICP[40,]
+tmp_HICP
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP
+tmp_HICP <- tmp_HICP[40,]
+tmp_HICP
+shiny::runApp()
+shiny::runApp()
+tmp_GDP <- getEurostatRaw(kod = "teina010", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_GDP
+tmp_HICP
+tmp_GDP <- getEurostatRaw(kod = "teina010", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP <- getEurostatRaw(kod = "teicp000", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
+tmp_HICP
+shiny::runApp()
+shiny::runApp()
+shiny::runApp()
+?tabPanel
+shiny::runApp()
+shiny::runApp()

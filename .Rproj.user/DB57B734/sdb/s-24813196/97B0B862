@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle       : Linear regression - excercise \nsubtitle    : Developing data products - projects\nauthor      : sta1111 #landslide \nframework   : landslide       # {io2012, html5slides, shower, dzslides, ...}\nhighlighter : highlight.js  # {highlight.js, prettify, highlight}\nhitheme     : tomorrow      # \nwidgets     : []            # {mathjax, quiz, bootstrap}\nmode        : selfcontained # {standalone, draft}\nknit        : slidify::knit2slides\n\n\n---\n\n## Linear regression - exercise \n# Developing data products - projects\n\nThe main purpose of she presentation is to show steps of fitting linear model.\nThe analysis is prepared on _mtcars_ dataset showed on the second slide and the depending variable is _mpg_. The following slides consists of:\n- plot with influence of combination of dependent variables on R2\n- formula od chosen model - with variables that implies the highest R2 + estimated coefficients\n- plots that help to asses goodless of fit to real data\n\n--- .class #id \n\n## mtcars dataset table\n\n```{r, echo=FALSE, warning=FALSE, comment=\"\" }\nlibrary(\"leaps\")\ndataset <- mtcars\ndataset[1:16,]\n```\n\n---\n\n## Variable Selection\n\n```{r}\nleaps<-regsubsets(mpg ~ ., data=dataset,nbest=10)\nplot(leaps,scale=\"r2\")\n\n```\n\n---\n\n## Linear model estimation\n\n```{r, echo=FALSE, warning=FALSE, comment=\"\"}\nfit <- lm(mpg ~ disp + hp + drat + wt + qsec + am + gear + carb, data=dataset)\nfit$call\nfit$coefficients\n\n```\n\n---\n\n## Goodness of fit\n\n```{r, echo=FALSE}\nlayout(matrix(c(1,2,3,4),2,2)) \nplot(fit)\n\n```\n\n",
+    "created" : 1451248839322.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2515576701",
+    "id" : "97B0B862",
+    "lastKnownWriteTime" : 1451249137,
+    "path" : "C:/Users/Joanna/Downloads/slides_coursera-2015-12-27/slides_coursera/index.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
