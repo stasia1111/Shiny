@@ -75,7 +75,7 @@ tmp_unemployment <- getEurostatRaw(kod = "teina310", rowRegExp=NULL, colRegExp=N
 tmp_unemployment <- tmp_unemployment [254:276,]
 tmp_3_month_interest_rate <- getEurostatRaw(kod = "teimf040", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
 tmp_Production_in_industry <- getEurostatRaw(kod = "teiis080", rowRegExp=NULL, colRegExp=NULL, strip.white = TRUE)
-tmp_Production_in_industry <-tmp_Production_in_industry[1:36,]
+tmp_Production_in_industry <-tmp_Production_in_industry[1:36,-ncol(tmp_Production_in_industry)]
 shinyServer(function(input, output) {
 
   output$checkboxGroupx <- renderUI({
@@ -151,7 +151,7 @@ shinyServer(function(input, output) {
     
     plot_ly(df_states, z=value, locations=state_codes,  text=paste0(df_states$state_codes, '<br>', indicator, ': ', df_states$value) ,
             type="choropleth", locationmode = 'country names', colors = 'Purples', filename="stackoverflow/simple-choropleth") %>%
-      layout(title = 'Eurostat - GDP',
+      layout(title = paste0('Eurostat - ',indicator),
              geo = g)
     
 #      output$dataset <- renderTable({
